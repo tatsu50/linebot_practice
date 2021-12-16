@@ -10,6 +10,9 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, ImageSendMessage,
 )
 import os
+import json
+import urllib.request
+from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
