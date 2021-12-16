@@ -81,9 +81,9 @@ def handle_message(event):
     #入力された文字を取得
     text_in = event.message.text
 
-    if "今日" in text_in:   #scw.pyのgetw関数を呼び出している
+    if "今日" in text_in:#scw.pyのgetw関数を呼び出している
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=scw.getw()))
-    else: "明日" in text_in:   #scw.pyのtom_getw関数を呼び出している
+    else: "明日" in text_in:#scw.pyのtom_getw関数を呼び出している
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=scw.tom_getw()))
 
 
