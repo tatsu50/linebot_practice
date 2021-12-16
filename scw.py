@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 def getw():    #今日の天気スクレイピング
     #対象のサイトURL
-    url = "https://tenki.jp/forecast/6/30/6200/27100/"
+    url = "https://tenki.jp/forecast/5/27/5320/24203/"
     #インスタンス作成
     res = urllib.request.urlopen(url)
     soup = BeautifulSoup(res, 'html.parser')
@@ -29,7 +29,7 @@ def getw():    #今日の天気スクレイピング
 
 def tom_getw():    #明日の天気スクレイピング
     #対象のサイトURL
-    url = "https://tenki.jp/forecast/6/30/6200/27210/"
+    url = "https://tenki.jp/forecast/5/27/5320/24203/"
     #インスタンス作成
     res = urllib.request.urlopen(url)
     soup = BeautifulSoup(res, 'html.parser')
