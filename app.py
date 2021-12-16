@@ -73,19 +73,6 @@ def handle_message(event):
             ]
         )
 
-@handler.add(MessageEvent,messsage=TextMessage)
-def handler_message(event):
-    text=event.message.text
-    if'こんにちは'in text:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text='真珠っていいよね')
-        )
-    else:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text='「'+ text +'」って何？')
-        )
 
 # ポート番号を環境変数から取得
 port = os.getenv("PORT")
