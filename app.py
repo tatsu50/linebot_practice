@@ -14,9 +14,9 @@ import os
 app = Flask(__name__)
 
 # チャネルシークレットを設定
-YOUR_CHANNEL_SECRET = "XXXXX"
+YOUR_CHANNEL_SECRET = "c7217edc98bba84efb0036e6a8397999"
 # チャネルアクセストークンを設定
-YOUR_CHANNEL_ACCESS_TOKEN = "XXXXX"
+YOUR_CHANNEL_ACCESS_TOKEN = "/8iYaBv+iAgEAP+6zYtHCYxMzb7uxVpiHnykssLGwa2tEtDmF9UNJeKkKyiREWwbbBG8c166Q31cvs1Xo42/gbQabK0FyM0fHCt8cRDVeGaVxQVzHz+u2+MBJshRSMJlwZX2GX+NUrZ/lPmYr22HggdB04t89/1O/w1cDnyilFU="
 
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
