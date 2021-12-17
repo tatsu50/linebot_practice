@@ -65,11 +65,12 @@ def handle_message(event):
             response_message = "Good evening!"
 
         elif (event.message.text == "コンター図"):
-            image_message  =  ImageSendMessage(
-            original_content_url = 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg', 
-            preview_image_url = 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg' 
-            )
-            
+            return client.replyMessage(event.replyToken, {
+                type: 'image',
+                originalContentUrl: 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg', 
+                previewImageUrl: 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg'
+            })
+
         else:
             response_message = "その言葉はわかりません。"
 
