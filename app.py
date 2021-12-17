@@ -69,7 +69,7 @@ def handle_message(event):
             original_content_url = 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg', 
             preview_image_url = 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg' 
             )
-）
+            
         else:
             response_message = "その言葉はわかりません。"
 
