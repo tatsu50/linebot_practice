@@ -63,9 +63,9 @@ def handle_message(event):
 
         elif (event.message.text == "こんばんは"):
             response_message = "Good evening!"
-            
+
         elif (event.message.text == "コンター図"):
-            image_message  =  ImageSendMessage（
+            image_message  =  ImageSendMessage(
             original_content_url = 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg', 
             preview_image_url = 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg' 
             )
