@@ -7,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage,
+    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage,ImageMessage,ImageSendMessage
 )
 import os
 import json
@@ -53,11 +53,12 @@ def handle_message(event):
     # メッセージの種類が「テキスト」なら
     if event.type == "message":
         response_message = ""
+        response_image =""
 
         # event.message.text という変数にメッセージの内容が入っている
         if (event.message.text == "おはようございます"):
             response_message = "Good morning!"
-
+            response_message =""
         elif (event.message.text == "こんにちは"):
             response_message = "Good afternoon!"
 
@@ -65,11 +66,13 @@ def handle_message(event):
             response_message = "Good evening!"
 
         elif (event.message.text == "コンター図"):
-            return client.replyMessage(event.replyToken, {
-                type: 'image',
-                originalContentUrl: 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg', 
-                previewImageUrl: 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg'
-            })
+            response_message = "今日の図"
+            response_image ="https://web19231.azurewebsites.net/pbl/img/FPS.jpg"
+            # return client.replyMessage(event.replyToken, {
+            #     type: 'image',
+            #     originalContentUrl: 'オリジナルサイズの画像URL', 
+            #     previewImageUrl: 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg'
+            # })
 
         else:
             response_message = "その言葉はわかりません。"
