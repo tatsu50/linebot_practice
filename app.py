@@ -53,6 +53,7 @@ def handle_message(event):
 
     # メッセージの種類が「テキスト」なら
     if event.type == "message":
+        responses = []
         response_message = ""
         response_image =""
 
@@ -74,21 +75,35 @@ def handle_message(event):
             #     originalContentUrl: 'オリジナルサイズの画像URL', 
             #     previewImageUrl: 'https://web19231.azurewebsites.net/pbl/img/FPS.jpg'
             # })
-
-        else:
-            response_message = "その言葉はわかりません。"
-
-        # 返信文を送信
-        # response_message の中に入っている文を返す
-        line_bot_api.reply_message(
-            event.reply_token,
-            [   
-                TextMessage(text=response_message),
+            responses.append(
                 ImageSendMessage(
                     original_content_url=response_image,
                     preview_image_url=response_image
                 )
-            ]
+            )
+
+        else:
+            response_message = "その言葉はわかりません。"
+        
+        responses.append(
+            TextMessage(text=response_message)
+        )
+
+        # 返信文を送信
+        # response_message の中に入っている文を返す
+        # line_bot_api.reply_message(
+        #     event.reply_token,
+        #     [   
+        #         TextMessage(text=response_message),
+        #         ImageSendMessage(
+        #             original_content_url=response_image,
+        #             preview_image_url=response_image
+        #         )
+        #     ]
+        # )
+        line_bot_api.reply_message(
+            event.reply_token,
+            responses
         )
 
 # @handler.add(MessageEvent,message=TextMessage)
