@@ -83,7 +83,7 @@ def handle_message(event):
             )
         elif (event.message.text == "グラフ"):
              response_message = "今日のグラフ"
-             response_image ="https://web19231.scm.azurewebsites.net/dev/wwwroot/pbl/img/%E6%8A%98%E3%82%8C%E7%B7%9A%E3%82%B0%E3%83%A9%E3%83%95.jpg"
+             response_image ="https://web19231.scm.azurewebsites.net/dev/wwwroot/pbl/img/taiti.jpg"
              responses.append(
                 ImageSendMessage(
                     original_content_url=response_image,
