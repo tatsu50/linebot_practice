@@ -69,7 +69,7 @@ def handle_message(event):
 
         elif (event.message.text == "コンター図"):
             response_message = "今日の図"
-            response_image ="https://web19231.azurewebsites.net/pbl/img/FPS.jpg"
+            response_image ="https://web19231.scm.azurewebsites.net/dev/api/files/wwwroot/pbl/img/GetImageAttachment%20(1).jpg"
             # return client.replyMessage(event.replyToken, {
             #     type: 'image',
             #     originalContentUrl: 'オリジナルサイズの画像URL', 
